@@ -1,217 +1,298 @@
-# Next.js Full-Stack Application
+# 🚀 Next.js Enterprise Full-Stack Boilerplate
 
-A modern full-stack web application built with Next.js 15, featuring a clean separation between frontend and backend components.
+A production-ready, enterprise-grade Next.js boilerplate with modern DevOps practices, designed for scalability, maintainability, and rapid development.
+
+[![CI/CD](https://github.com/yourusername/nextjs-fullstack-boilerplate/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/yourusername/nextjs-fullstack-boilerplate/actions)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## ✨ Features
+
+### 🏗️ **Enterprise Architecture**
+
+- **Modular Structure**: Clean separation of concerns with scalable folder organization
+- **Type Safety**: Full TypeScript support with strict configuration
+- **Modern Stack**: Next.js 15, React 19, Tailwind CSS 4
+- **Performance**: Optimized builds, code splitting, and caching strategies
+
+### 🔧 **Developer Experience**
+
+- **Hot Reloading**: Fast development with Turbopack
+- **Code Quality**: ESLint, Prettier, and Husky for consistent code
+- **Testing**: Jest and Testing Library for comprehensive testing
+- **IDE Support**: VS Code configuration and extensions
+
+### 🚀 **DevOps & CI/CD**
+
+- **GitHub Actions**: Automated testing, building, and deployment
+- **Docker**: Production-ready containerization
+- **Security**: Automated security audits and vulnerability scanning
+- **Monitoring**: Built-in observability and error tracking
+
+### 🎨 **UI/UX**
+
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Component Library**: Reusable, accessible components
+- **Animations**: Smooth transitions with Framer Motion
+- **Icons**: Comprehensive icon set with Lucide React
 
 ## 🚀 Quick Start
 
+### Prerequisites
+
+- Node.js 20+
+- npm 10+
+- Git
+
+### Installation
+
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/nextjs-fullstack-boilerplate.git
+
+# Navigate to project directory
+cd nextjs-fullstack-boilerplate
+
 # Install dependencies
 npm install
 
+# Set up environment variables
+cp .env.example .env.local
+
 # Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
 ```
 
-The application will be available at `http://localhost:3000` (or the next available port).
+Visit [http://localhost:3000](http://localhost:3000) to see your application.
 
 ## 📁 Project Structure
 
 ```
-project11/
-├── app/                          # Next.js App Router directory
-│   ├── layout.tsx               # Root layout component
-│   ├── page.tsx                 # Homepage (imports from frontend)
-│   ├── favicon.ico              # Site favicon
-│   │
-│   ├── frontend/                # Frontend components and pages
-│   │   ├── components/          # Reusable React components
-│   │   │   ├── Header.tsx       # Navigation header component
-│   │   │   └── Footer.tsx       # Footer component
-│   │   ├── pages/               # Page components
-│   │   │   └── HomePage.tsx     # Main homepage component
-│   │   ├── styles/              # CSS and styling files
-│   │   │   └── globals.css      # Global styles and Tailwind CSS
-│   │   ├── utils/               # Frontend utility functions
-│   │   │   └── api.ts           # API client for HTTP requests
-│   │   └── types/               # TypeScript type definitions
-│   │       └── index.ts         # Frontend-specific types
-│   │
-│   ├── backend/                 # Backend logic and utilities
-│   │   ├── api/                 # API routes (Next.js App Router)
-│   │   │   ├── users/           # User management endpoints
-│   │   │   │   └── route.ts     # GET /api/users, POST /api/users
-│   │   │   └── auth/            # Authentication endpoints
-│   │   │       └── login/       # Login endpoint
-│   │   │           └── route.ts # POST /api/auth/login
-│   │   ├── lib/                 # Backend utilities
-│   │   │   └── database.ts      # Database connection utilities
-│   │   ├── middleware/          # Server middleware
-│   │   │   └── auth.ts          # Authentication middleware
-│   │   └── types/               # Backend type definitions
-│   │       └── index.ts         # Server-specific types
-│   │
-│   └── api/                     # Next.js API routes (App Router)
-│       ├── users/               # User API endpoints
-│       │   └── route.ts         # User CRUD operations
-│       └── auth/                # Authentication API endpoints
-│           └── login/           # Login endpoint
-│               └── route.ts     # User authentication
-│
-├── public/                      # Static assets
-│   ├── next.svg                # Next.js logo
-│   ├── vercel.svg              # Vercel logo
-│   ├── file.svg                # File icon
-│   ├── globe.svg               # Globe icon
-│   └── window.svg              # Window icon
-│
-├── package.json                 # Project dependencies and scripts
-├── package-lock.json           # Dependency lock file
-├── next.config.ts              # Next.js configuration
-├── tsconfig.json               # TypeScript configuration
-├── postcss.config.mjs          # PostCSS configuration
+nextjs-fullstack-boilerplate/
+├── .github/workflows/          # CI/CD pipelines
+├── .vscode/                    # VS Code configuration
+├── .husky/                     # Git hooks
+├── configs/                    # Configuration files
+├── docs/                       # Documentation
+├── infrastructure/             # Infrastructure as Code
+├── monitoring/                 # Observability tools
+├── scripts/                    # Build and deployment scripts
+├── src/                        # Source code
+│   ├── app/                    # Next.js App Router
+│   │   ├── api/                # API routes
+│   │   ├── globals/            # Global styles and configs
+│   │   ├── layouts/            # Layout components
+│   │   └── pages/              # Page components
+│   ├── components/             # Reusable UI components
+│   ├── hooks/                  # Custom React hooks
+│   ├── lib/                    # Utility libraries
+│   ├── services/               # Business logic services
+│   ├── stores/                 # State management
+│   ├── types/                  # TypeScript type definitions
+│   └── utils/                  # Helper functions
+├── tests/                      # Test files
+├── tools/                      # Development tools
+├── Dockerfile                  # Docker configuration
+├── docker-compose.yml          # Docker Compose setup
 └── README.md                   # This file
 ```
 
-## 🏗️ Architecture Overview
-
-### Frontend (`app/frontend/`)
-The frontend is organized using a component-based architecture:
-
-- **Components**: Reusable UI components like Header and Footer
-- **Pages**: Page-level components that compose multiple smaller components
-- **Utils**: Utility functions for API calls and other frontend logic
-- **Types**: TypeScript interfaces and types for type safety
-- **Styles**: Global CSS and styling configuration
-
-### Backend (`app/backend/`)
-The backend follows a layered architecture:
-
-- **API Routes**: RESTful endpoints using Next.js App Router
-- **Middleware**: Authentication and request processing logic
-- **Lib**: Database connections and business logic utilities
-- **Types**: Server-side type definitions
-
-## 🔧 Available Scripts
-
-```bash
-# Development
-npm run dev          # Start development server with Turbopack
-npm run build        # Build for production with Turbopack
-npm run start        # Start production server
-
-# Type checking
-npx tsc --noEmit     # Run TypeScript type checking
-```
-
-## 🌐 API Endpoints
-
-### Authentication
-- `POST /api/auth/login` - User login
-  - Body: `{ email: string, password: string }`
-  - Returns: `{ data: { token, user }, success: boolean, message: string }`
-
-### Users
-- `GET /api/users` - Get all users (requires authentication)
-  - Headers: `x-user-id: string`
-  - Returns: `{ data: User[], success: boolean, message: string }`
-
-- `POST /api/users` - Create a new user (requires authentication)
-  - Headers: `x-user-id: string`
-  - Body: `{ name: string, email: string }`
-  - Returns: `{ data: User, success: boolean, message: string }`
-
-## 🎨 Frontend Components
-
-### Header Component
-```tsx
-import Header from './frontend/components/Header';
-
-<Header title="My App" />
-```
-
-### Footer Component
-```tsx
-import Footer from './frontend/components/Footer';
-
-<Footer />
-```
-
-### API Client
-```tsx
-import { apiClient } from './frontend/utils/api';
-
-// GET request
-const users = await apiClient.get<User[]>('/users');
-
-// POST request
-const newUser = await apiClient.post<User>('/users', { name: 'John', email: 'john@example.com' });
-```
-
-## 🔐 Authentication
-
-The application includes a mock authentication system:
-
-- **Test Credentials**: 
-  - Email: `admin@example.com`
-  - Password: `password`
-
-- **Authentication Headers**: Include `x-user-id` header for protected routes
-
-## 🛠️ Development
-
-### Adding New Components
-1. Create component in `app/frontend/components/`
-2. Export as default function
-3. Import and use in pages
-
-### Adding New API Routes
-1. Create route file in `app/api/[endpoint]/route.ts`
-2. Export HTTP method functions (GET, POST, PUT, DELETE)
-3. Use middleware for authentication if needed
-
-### Adding New Pages
-1. Create page component in `app/frontend/pages/`
-2. Import and use in `app/page.tsx` or create new route
-
-## 📦 Dependencies
-
-### Production
-- **Next.js 15.5.4** - React framework with App Router
-- **React 19.1.0** - UI library
-- **TypeScript 5** - Type safety
+## 🛠️ Available Scripts
 
 ### Development
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **PostCSS** - CSS processing
-- **Turbopack** - Fast bundler for development
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+```
+
+### Code Quality
+
+```bash
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint issues
+npm run format       # Format code with Prettier
+npm run type-check   # Run TypeScript check
+```
+
+### Testing
+
+```bash
+npm run test         # Run tests
+npm run test:watch   # Run tests in watch mode
+npm run test:coverage # Run tests with coverage
+```
+
+### Utilities
+
+```bash
+npm run clean        # Clean build artifacts
+npm run analyze      # Analyze bundle size
+npm run security:audit # Run security audit
+```
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Copy `.env.example` to `.env.local` and configure:
+
+```env
+# Application
+NODE_ENV=development
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/database"
+
+# Authentication
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL=http://localhost:3000
+
+# External Services
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
+```
+
+### VS Code Setup
+
+The project includes VS Code configuration for optimal development experience:
+
+- Auto-formatting on save
+- ESLint integration
+- TypeScript support
+- Recommended extensions
+
+## 🧪 Testing
+
+### Running Tests
+
+```bash
+# Run all tests
+npm run test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Test Structure
+
+- **Unit Tests**: Test individual components and functions
+- **Integration Tests**: Test API routes and data flow
+- **E2E Tests**: Test complete user workflows
 
 ## 🚀 Deployment
 
-This application is ready for deployment on Vercel:
+### Vercel (Recommended)
 
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Deploy automatically
+```bash
+# Install Vercel CLI
+npm i -g vercel
 
-The app will be available at your Vercel domain.
+# Deploy
+vercel --prod
+```
 
-## 🔄 Next Steps
+### Docker
 
-To extend this application:
+```bash
+# Build image
+docker build -t nextjs-boilerplate .
 
-1. **Database Integration**: Replace mock data with real database queries
-2. **Authentication**: Implement JWT tokens and session management
-3. **State Management**: Add Redux or Zustand for complex state
-4. **Testing**: Add Jest and React Testing Library
-5. **Styling**: Customize Tailwind CSS theme
-6. **API Documentation**: Add OpenAPI/Swagger documentation
+# Run container
+docker run -p 3000:3000 nextjs-boilerplate
+```
 
-## 📝 License
+### Manual Deployment
 
-This project is open source and available under the [MIT License](LICENSE).
+```bash
+# Build application
+npm run build
+
+# Start production server
+npm run start
+```
+
+## 📊 Monitoring & Observability
+
+### Built-in Monitoring
+
+- **Error Tracking**: Sentry integration
+- **Performance**: Core Web Vitals monitoring
+- **Analytics**: Google Analytics support
+- **Logging**: Structured logging configuration
+
+### Health Checks
+
+- `/api/health` - Application health status
+- `/api/ready` - Readiness probe for Kubernetes
+
+## 🔒 Security
+
+### Security Features
+
+- **Security Headers**: XSS protection, CSRF prevention
+- **Input Validation**: Zod schema validation
+- **Authentication**: JWT-based authentication
+- **Rate Limiting**: API rate limiting
+- **Dependency Scanning**: Automated vulnerability checks
+
+### Security Best Practices
+
+- Environment variable validation
+- Secure cookie configuration
+- HTTPS enforcement
+- Content Security Policy
+
+## 📚 Documentation
+
+- [Architecture Overview](docs/ARCHITECTURE.md)
+- [Development Guide](docs/DEVELOPMENT.md)
+- [API Documentation](docs/API.md)
+- [Deployment Guide](docs/DEPLOYMENT.md)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+### Commit Convention
+
+We use [Conventional Commits](https://www.conventionalcommits.org/):
+
+- `feat:` New features
+- `fix:` Bug fixes
+- `docs:` Documentation changes
+- `style:` Code style changes
+- `refactor:` Code refactoring
+- `test:` Test changes
+- `chore:` Build process or auxiliary tool changes
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) - The React framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Vercel](https://vercel.com/) - Deployment platform
+- [TypeScript](https://www.typescriptlang.org/) - Type safety
+
+## 📞 Support
+
+- 📧 Email: your.email@example.com
+- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/nextjs-fullstack-boilerplate/issues)
+- 💬 Discussions: [GitHub Discussions](https://github.com/yourusername/nextjs-fullstack-boilerplate/discussions)
+
+---
+
+⭐ **Star this repository** if you find it helpful!

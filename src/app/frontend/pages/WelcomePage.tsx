@@ -1,21 +1,22 @@
-import Image from "next/image";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import Image from 'next/image';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function WelcomePage() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header title="Next.js Full-Stack Boilerplate" />
-      
+
       <main className="flex-1">
-        <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-[80vh] p-8 pb-20 gap-16 sm:p-20">
-          <div className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <div className="grid min-h-[80vh] grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-sans sm:p-20">
+          <div className="row-start-2 flex flex-col items-center gap-[32px] sm:items-start">
             <div className="text-center sm:text-left">
-              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <h1 className="mb-4 text-4xl font-bold text-gray-900">
                 Welcome to Your Next.js App! 🚀
               </h1>
-              <p className="text-lg text-gray-600 mb-8">
-                This is a modern full-stack boilerplate with organized frontend and backend structure.
+              <p className="mb-8 text-lg text-gray-600">
+                This is a modern full-stack boilerplate with organized frontend
+                and backend structure.
               </p>
             </div>
 
@@ -28,8 +29,10 @@ export default function WelcomePage() {
               priority
             />
 
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-2xl">
-              <h2 className="text-xl font-semibold text-blue-900 mb-3">✨ What's Included</h2>
+            <div className="max-w-2xl rounded-lg border border-blue-200 bg-blue-50 p-6">
+              <h2 className="mb-3 text-xl font-semibold text-blue-900">
+                ✨ What&apos;s Included
+              </h2>
               <ul className="space-y-2 text-blue-800">
                 <li>• Organized frontend/backend folder structure</li>
                 <li>• TypeScript support throughout</li>
@@ -40,9 +43,9 @@ export default function WelcomePage() {
               </ul>
             </div>
 
-            <div className="flex gap-4 items-center flex-col sm:flex-row">
+            <div className="flex flex-col items-center gap-4 sm:flex-row">
               <a
-                className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+                className="bg-foreground text-background flex h-10 items-center justify-center gap-2 rounded-full border border-solid border-transparent px-4 text-sm font-medium transition-colors hover:bg-[#383838] sm:h-12 sm:w-auto sm:px-5 sm:text-base dark:hover:bg-[#ccc]"
                 href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -57,7 +60,7 @@ export default function WelcomePage() {
                 Deploy now
               </a>
               <a
-                className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+                className="flex h-10 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-4 text-sm font-medium transition-colors hover:border-transparent hover:bg-[#f2f2f2] sm:h-12 sm:w-auto sm:px-5 sm:text-base md:w-[158px] dark:border-white/[.145] dark:hover:bg-[#1a1a1a]"
                 href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
                 target="_blank"
                 rel="noopener noreferrer"

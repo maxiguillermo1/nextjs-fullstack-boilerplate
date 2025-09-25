@@ -10,14 +10,24 @@ export async function GET(request: NextRequest) {
 
     // Mock user data - replace with actual database query
     const users = [
-      { id: '1', name: 'John Doe', email: 'john@example.com', createdAt: new Date() },
-      { id: '2', name: 'Jane Smith', email: 'jane@example.com', createdAt: new Date() },
+      {
+        id: '1',
+        name: 'John Doe',
+        email: 'john@example.com',
+        createdAt: new Date(),
+      },
+      {
+        id: '2',
+        name: 'Jane Smith',
+        email: 'jane@example.com',
+        createdAt: new Date(),
+      },
     ];
 
     return NextResponse.json({
       data: users,
       success: true,
-      message: 'Users retrieved successfully'
+      message: 'Users retrieved successfully',
     });
   } catch (error) {
     return NextResponse.json(
@@ -48,14 +58,17 @@ export async function POST(request: NextRequest) {
       id: Date.now().toString(),
       name,
       email,
-      createdAt: new Date()
+      createdAt: new Date(),
     };
 
-    return NextResponse.json({
-      data: newUser,
-      success: true,
-      message: 'User created successfully'
-    }, { status: 201 });
+    return NextResponse.json(
+      {
+        data: newUser,
+        success: true,
+        message: 'User created successfully',
+      },
+      { status: 201 }
+    );
   } catch (error) {
     return NextResponse.json(
       { error: 'Internal Server Error', message: 'Failed to create user' },

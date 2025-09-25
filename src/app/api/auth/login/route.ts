@@ -16,18 +16,18 @@ export async function POST(request: NextRequest) {
     // Mock authentication - replace with actual authentication logic
     if (email === 'admin@example.com' && password === 'password') {
       const token = 'mock-jwt-token-' + Date.now();
-      
+
       return NextResponse.json({
         data: {
           token,
           user: {
             id: '1',
             name: 'Admin User',
-            email: 'admin@example.com'
-          }
+            email: 'admin@example.com',
+          },
         },
         success: true,
-        message: 'Login successful'
+        message: 'Login successful',
       });
     } else {
       return NextResponse.json(
