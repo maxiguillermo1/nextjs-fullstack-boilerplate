@@ -1,5 +1,5 @@
-import HomePage from './frontend/pages/HomePage';
+import WelcomePage from './frontend/pages/WelcomePage';
 
 export default function Page() {
-  return <HomePage />;
+  return <WelcomePage />;
 }
