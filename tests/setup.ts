@@ -47,3 +47,7 @@ jest.mock('next/navigation', () => ({
 // Mock environment variables
 process.env.NODE_ENV = 'test';
 process.env.NEXT_PUBLIC_APP_URL = 'http://localhost:3000';
+
+// Mock global Request and Response for API tests
+global.Request = Request;
+global.Response = Response;
