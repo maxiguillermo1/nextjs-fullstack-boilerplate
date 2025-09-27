@@ -49,5 +49,29 @@ process.env.NODE_ENV = 'test';
 process.env.NEXT_PUBLIC_APP_URL = 'http://localhost:3000';
 
 // Mock global Request and Response for API tests
-global.Request = Request;
-global.Response = Response;
+if (typeof global.Request === 'undefined') {
+  global.Request = class Request {
+    constructor(
+      public url: string,
+      public init?: any
+    ) {}
+    headers = new Map();
+    method = 'GET';
+    body = null;
+  } as any;
+}
+
+if (typeof global.Response === 'undefined') {
+  global.Response = class Response {
+    constructor(
+      public body?: any,
+      public init?: any
+    ) {}
+    status = 200;
+    statusText = 'OK';
+    headers = new Map();
+    async json() {
+      return this.body;
+    }
+  } as any;
+}
